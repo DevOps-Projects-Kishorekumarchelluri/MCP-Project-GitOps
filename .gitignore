@@ -1,0 +1,22 @@
+# Secrets - never commit real credentials
+secret.yaml
+secret*.local.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
