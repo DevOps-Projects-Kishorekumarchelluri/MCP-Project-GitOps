@@ -10,10 +10,10 @@ This guide covers installing ArgoCD on your EKS cluster, retrieving the initial 
 |-------|-------|
 | Cluster Name | `quantamvector` |
 | Region | `ap-northeast-1` |
-| Account ID | `508262720940` |
+| Account ID | `340640891954` |
 | OIDC Provider | `oidc.eks.ap-northeast-1.amazonaws.com/id/54010A8680852B657EC215C7264F77E3` |
 | Namespace | `mcp-platform` |
-| GitOps Repo | `https://github.com/QuntamVector/MCP-Project-GitOps.git` |
+| GitOps Repo | `https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git` |
 | Services Repo | `https://github.com/QuntamVector/MCP-Project-ALL-services.git` |
 
 ---
@@ -190,7 +190,7 @@ argocd account update-password \
 ### Option A — HTTPS with token (GitHub PAT)
 
 ```bash
-argocd repo add https://github.com/QuntamVector/MCP-Project-GitOps.git \
+argocd repo add https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git \
   --username QuntamVector \
   --password <your-github-pat>
 ```
@@ -208,7 +208,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: https://github.com/QuntamVector/MCP-Project-GitOps.git
+  url: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
   username: QuntamVector
   password: <your-github-pat>
 EOF
@@ -279,7 +279,7 @@ cat > trust-policy.json << 'EOF'
     {
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::508262720940:oidc-provider/oidc.eks.ap-northeast-1.amazonaws.com/id/54010A8680852B657EC215C7264F77E3"
+        "Federated": "arn:aws:iam::340640891954:oidc-provider/oidc.eks.ap-northeast-1.amazonaws.com/id/54010A8680852B657EC215C7264F77E3"
       },
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
@@ -303,7 +303,7 @@ aws iam create-role \
 ```bash
 aws iam attach-role-policy \
   --role-name mcp-control-plane-role \
-  --policy-arn arn:aws:iam::508262720940:policy/mcp-control-plane-eks-policy
+  --policy-arn arn:aws:iam::340640891954:policy/mcp-control-plane-eks-policy
 ```
 
 ### Step 4 — Apply RBAC + ServiceAccount
@@ -436,7 +436,7 @@ argocd app sync <app-name> --force
 ### Repo connection error
 ```bash
 argocd repo list
-argocd repo get https://github.com/QuntamVector/MCP-Project-GitOps.git
+argocd repo get https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
 ```
 
 ### Reset admin password (if locked out)
@@ -476,6 +476,6 @@ EKS Cluster: quantamvector (ap-northeast-1)
     ├── mcp-api-gateway  ← Routes all /api/* traffic
     └── frontend         ← React + Nginx (public)
 
-GitHub: QuntamVector/MCP-Project-GitOps
+GitHub: DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps
     └── argocd-apps.yaml  ← ArgoCD watches this repo
 ```

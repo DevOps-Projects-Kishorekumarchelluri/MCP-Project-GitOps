@@ -189,7 +189,7 @@ EKS Cluster
    │ has OIDC provider (e.g., oidc.eks.ap-northeast-1.amazonaws.com/id/54010A...)
    │
 ServiceAccount (mcp-control-plane)
-   │ annotated with eks.amazonaws.com/role-arn: arn:aws:iam::508262720940:role/mcp-control-plane-role
+   │ annotated with eks.amazonaws.com/role-arn: arn:aws:iam::340640891954:role/mcp-control-plane-role
    │
 IAM Role (mcp-control-plane-role)
    │ Trust Policy: only allow this specific namespace/serviceaccount to assume it
@@ -211,7 +211,7 @@ metadata:
   name: mcp-control-plane
   namespace: mcp-platform
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::508262720940:role/mcp-control-plane-role
+    eks.amazonaws.com/role-arn: arn:aws:iam::340640891954:role/mcp-control-plane-role
 ```
 
 ### Step 2 — Deployment references the ServiceAccount (`gitops/base/mcp-control-plane/deployment.yaml`)
@@ -249,7 +249,7 @@ subjects:
 ```json
 {
   "Principal": {
-    "Federated": "arn:aws:iam::508262720940:oidc-provider/oidc.eks..."
+    "Federated": "arn:aws:iam::340640891954:oidc-provider/oidc.eks..."
   },
   "Action": "sts:AssumeRoleWithWebIdentity",
   "Condition": {
@@ -264,7 +264,7 @@ subjects:
 
 EKS injects two environment variables into the pod:
 ```bash
-AWS_ROLE_ARN=arn:aws:iam::508262720940:role/mcp-control-plane-role
+AWS_ROLE_ARN=arn:aws:iam::340640891954:role/mcp-control-plane-role
 AWS_WEB_IDENTITY_TOKEN_FILE=/var/run/secrets/eks.amazonaws.com/serviceaccount/token
 ```
 `boto3` reads these automatically — **no code changes needed**.
@@ -568,7 +568,7 @@ argocd account update-password
 ### 3.5 Add GitHub Repository to ArgoCD
 
 ```bash
-argocd repo add https://github.com/QuntamVector/MCP-Project-GitOps.git \
+argocd repo add https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git \
   --username <github-username> \
   --password <github-PAT>
 ```
@@ -598,8 +598,8 @@ kubectl get svc ingress-nginx-controller -n ingress-nginx
 In your DNS provider (Route 53 or registrar), add:
 ```
 A record (or CNAME):
-  quntamvector.in  →  <EXTERNAL-IP from above>
-  *.quntamvector.in → <EXTERNAL-IP>
+  chkishore.online  →  <EXTERNAL-IP from above>
+  *.chkishore.online → <EXTERNAL-IP>
 ```
 
 ---
@@ -748,17 +748,17 @@ python3 -c "import boto3; print(boto3.client('eks', region_name='ap-northeast-1'
 
 ```bash
 # Health checks through the gateway
-curl https://quntamvector.in/api/auth/health
-curl https://quntamvector.in/api/model/health
-curl https://quntamvector.in/api/control-plane/health
+curl https://chkishore.online/api/auth/health
+curl https://chkishore.online/api/model/health
+curl https://chkishore.online/api/control-plane/health
 
 # Login
-curl -X POST https://quntamvector.in/api/auth/login \
+curl -X POST https://chkishore.online/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"admin","password":"admin123"}'
 
 # Get cluster status (tests IRSA)
-curl https://quntamvector.in/api/control-plane/status?namespace=mcp-platform
+curl https://chkishore.online/api/control-plane/status?namespace=mcp-platform
 ```
 
 ---
@@ -806,11 +806,11 @@ GitOps
   [ ] argocd-apps.yaml applied
   [ ] All 7 waves synced successfully
   [ ] ClusterIssuer letsencrypt-prod Ready
-  [ ] TLS certificate issued for quntamvector.in
+  [ ] TLS certificate issued for chkishore.online
 
 Verification
   [ ] All pods Running in mcp-platform namespace
-  [ ] https://quntamvector.in loads frontend
+  [ ] https://chkishore.online loads frontend
   [ ] /api/auth/health returns 200
   [ ] /api/control-plane/status returns cluster data (IRSA working)
   [ ] HPA objects exist: kubectl get hpa -n mcp-platform

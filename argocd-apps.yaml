@@ -11,7 +11,7 @@ metadata:
 spec:
   description: MCP Platform — AI + DevOps on AWS EKS
   sourceRepos:
-    - https://github.com/QuntamVector/MCP-Project-GitOps.git
+    - https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
   destinations:
     - server: https://kubernetes.default.svc
       namespace: mcp-platform
@@ -53,7 +53,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/platform-config
   destination:
@@ -87,7 +87,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/redis
   destination:
@@ -121,7 +121,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/auth-service
   destination:
@@ -152,7 +152,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/mcp-control-plane
   destination:
@@ -186,7 +186,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/model-service
   destination:
@@ -217,7 +217,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/ai-assistant
   destination:
@@ -248,7 +248,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/recommendation-engine
   destination:
@@ -282,7 +282,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/product-service
   destination:
@@ -313,7 +313,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/user-service
   destination:
@@ -344,7 +344,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/payment-service
   destination:
@@ -378,7 +378,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/mcp-api-gateway
   destination:
@@ -412,7 +412,7 @@ metadata:
 spec:
   project: mcp-platform
   source:
-    repoURL: https://github.com/QuntamVector/MCP-Project-GitOps.git
+    repoURL: https://github.com/DevOps-Projects-Kishorekumarchelluri/MCP-Project-GitOps.git
     targetRevision: HEAD
     path: base/frontend
   destination:

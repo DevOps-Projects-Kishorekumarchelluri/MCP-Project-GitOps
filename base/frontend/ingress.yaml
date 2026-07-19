@@ -13,10 +13,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - quntamvector.in
+        - chkishore.online
       secretName: frontend-tls
   rules:
-    - host: quntamvector.in
+    - host: chkishore.online
       http:
         paths:
           - path: /api(/|$)(.*)

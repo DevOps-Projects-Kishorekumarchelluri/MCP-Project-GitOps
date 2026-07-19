@@ -4,7 +4,7 @@ metadata:
   name: mcp-control-plane
   namespace: mcp-platform
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::508262720940:role/mcp-control-plane-role
+    eks.amazonaws.com/role-arn: arn:aws:iam::340640891954:role/mcp-control-plane-role
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
