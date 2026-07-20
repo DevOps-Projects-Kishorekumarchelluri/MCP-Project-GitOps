@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payment-service
-          image: 340640891954.dkr.ecr.ap-northeast-1.amazonaws.com/mcp-platform/payment-service:01bc061c4549b46c97b29df91384bf0e82a4d03e
+          image: 340640891954.dkr.ecr.ap-northeast-1.amazonaws.com/mcp-platform/payment-service:eb9b48f198ea0863fa5a9d868869064c37859a11
           ports:
             - containerPort: 8007
           envFrom:
